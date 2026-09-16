@@ -10,7 +10,7 @@ import { Job } from './jobs/job.entity';
   imports: [
     ConfigModule.forRoot({ isGlobal: true }),
     TypeOrmModule.forRoot({
-      type: ' 'postgres'',
+      type: 'postgres',
       database: process.env.DATABASE_PATH || 'jobs.db',
       entities: [Job],
       synchronize: true,
