@@ -1,5 +1,4 @@
 
-
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
@@ -10,12 +9,12 @@ import { Job } from './jobs/job.entity';
   imports: [
     ConfigModule.forRoot({ isGlobal: true }),
     TypeOrmModule.forRoot({
-     
       type: 'postgres',
-      database: process.env.DATABASE_PATH || 'jobs.db',
+      url: process.env.DATABASE_URL,
       entities: [Job],
       synchronize: true,
-       }),
+      ssl: { rejectUnauthorized: false },
+    }),
     JobsModule,
   ],
 })
