@@ -21,7 +21,7 @@ export class Job {
 type: JobType;
 
 @Column({ type: 'varchar', default: 'pending' })
-status: JobStatus;
+status: JobStatus;git commit -m "Add NestJS config dependency"
 
   @CreateDateColumn()
   createdAt: Date;
