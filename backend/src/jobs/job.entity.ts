@@ -1,3 +1,4 @@
+
 import {
   Entity,
   PrimaryGeneratedColumn,
@@ -15,11 +16,12 @@ export class Job {
   @Column({ length: 200 })
   title: string;
 
-  @Column({ type: 'text' })
-  type: JobType;
+  
+  @Column({ type: 'varchar' })
+type: JobType;
 
-  @Column({ type: 'text', default: 'pending' })
-  status: JobStatus;
+@Column({ type: 'varchar', default: 'pending' })
+status: JobStatus;
 
   @CreateDateColumn()
   createdAt: Date;
